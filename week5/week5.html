@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+  <body onload="init();">
+    <form name="test" onSubmit="register()" onReset="reWrite()">
+      ID: <input type="text" name="id" size="20" value="" />
+      <p> Password: <input type="password" name="password" size="10" value="" />
+        <p> 
+          <input type="submit" name="btn1" value="Register"/>
+          <input type="reset" name="btn2" value="Reset" />
+        </p>
+      </p>
+    </form>
+
+    <script type = "text/javascript">
+      function register() {
+      document.test.submit();
+      if(document.test.id.value===''){
+          alert('ID를 입력하세요');
+      }
+      if(document.test.password.value===''){
+          alert('패스워드를 입력하세요');
+      }
+      }
+      function reWrite() {
+      document.test.reset();
+      alert("Please enter it again");
+      }
+      function init(){document.test.id.focus()}
+    </script>
+  </body>
+</html>
