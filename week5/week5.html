@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
   </head>
   <body onload="init();">
-    <form name="test" onSubmit="register()" onReset="reWrite()">
+    <form name="test" onSubmit="register()" onReset="reWrite()" onchange="_onChange()">
       ID: <input type="text" name="id" size="20" value="" />
       <p> Password: <input type="password" name="password" size="10" value="" />
         <p> 
@@ -16,19 +16,23 @@
 
     <script type = "text/javascript">
       function register() {
-      document.test.submit();
-      if(document.test.id.value===''){
-          alert('ID를 입력하세요');
+        document.test.submit();
+        if(document.test.id.value===''){
+            alert('ID를 입력하세요');
+        }
+        if(document.test.password.value===''){
+            alert('패스워드를 입력하세요');
+        }
       }
-      if(document.test.password.value===''){
-          alert('패스워드를 입력하세요');
-      }
-      }
+
       function reWrite() {
-      document.test.reset();
-      alert("Please enter it again");
+        document.test.reset();
+        alert("Please enter it again");
       }
       function init(){document.test.id.focus()}
+      function _onChange(){
+          alert('ID가 변경되었습니다');
+      }
     </script>
   </body>
 </html>
